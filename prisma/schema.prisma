@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum InvoiceStatus {
+  DRAFT
+  OPEN
+  PAID
+  OVERDUE
+  CANCELLED
+}
+
+model Invoice {
+  id           String        @id @default(cuid())
+  everbillId   String        @unique
+  number       String
+  customerName String
+  amountTotal  Decimal       @db.Decimal(12, 2)
+  amountPaid   Decimal       @db.Decimal(12, 2)
+  currency     String        @default("EUR")
+  status       InvoiceStatus
+  issueDate    DateTime
+  dueDate      DateTime?
+  paidDate     DateTime?
+  raw          Json
+  syncedAt     DateTime      @default(now()) @updatedAt
+
+  @@index([issueDate])
+  @@index([status])
+}
