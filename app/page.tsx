@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/db/prisma";
+import { AutomationTile } from "@/components/AutomationTile";
 
 export const dynamic = "force-dynamic";
 
@@ -14,6 +15,10 @@ export default async function DashboardPage() {
           Dashboard
         </h1>
       </header>
+
+      <section className="mb-6">
+        <AutomationTile />
+      </section>
 
       <table className="w-full text-sm border-collapse">
         <thead>

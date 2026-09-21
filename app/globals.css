@@ -12,10 +12,14 @@
   --baseline: #c3c2b7;
   --border: rgba(11, 11, 11, 0.1);
 
-  --series-1: #2a78d6; /* blue */
-  --series-2: #eb6834; /* orange */
-  --series-3: #1baf7a; /* aqua */
-  --series-4: #eda100; /* yellow */
+  --series-1: #2a78d6;
+  /* blue */
+  --series-2: #eb6834;
+  /* orange */
+  --series-3: #1baf7a;
+  /* aqua */
+  --series-4: #eda100;
+  /* yellow */
 
   --status-good: #0ca30c;
   --status-warning: #fab219;
