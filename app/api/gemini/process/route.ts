@@ -1,10 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { GoogleGenAI } from "@google/genai";
 
 // Ensure this route takes max Vercel timeout (optional)
 export const maxDuration = 60;
 
-export async function POST(request: NextRequest) {
+export async function POST() {
   const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
   if (!GEMINI_API_KEY) {
